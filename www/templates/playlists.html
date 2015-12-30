@@ -1,9 +1,22 @@
 <ion-view view-title="ListUp">
+<ion-nav-buttons side="secondary">
+	<button class="button button-icon ion-plus-round" style="color: #fff" ng-click="showPopup()"></button>
+</ion-nav-buttons>
   <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
-        {{playlist.title}}
-      </ion-item>
-    </ion-list>
+    <div class="card list-card">
+    	<div class="item item-avatar">
+    		<h2 align="center">Ultima Lista inserida     {{lista.data}}</h2>
+    		<h2 align="Right">{{}}</h2>
+    	</div>
+
+    	<div class="item">
+    		<a style="margin-left: 5px">Local: {{lista.market}}</a>
+    	</div>
+
+    	<div>
+    		<a style="margin-left: 20px" >Total de itens : {{lista.qtde}}</a>
+    	</div>
+
+    </div>
   </ion-content>
 </ion-view>

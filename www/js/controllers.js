@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('listUp', function($scope, $ionicModal, $timeout) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -41,16 +41,46 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
+.controller('listUpCtrl', ['$scope', '$state','$ionicPopup', '$timeout', function($scope, $state, $ionicPopup, $timeout) {
+    $scope.showPopup = function() {
+      $scope.lista = {
+
+
+      } ;
+
+      var myPopup = $ionicPopup.show({
+        title: 'Nova Lista', // String. The title of the popup.
+        cssClass: 'form', // String, The custom CSS class name
+        template: '<input type="text" placeholder="Supermercado" ng-model="lista.market"> <input type="date" placeholder="Dia da compra" ng-model="lista.date"> <input type="textarea" placeholder="Comentários" ng-model="lista.commnet">',
+        subTitle: '', // String (optional). The sub-title of the popup.
+        scope: $scope, // Scope (optional). A scope to link to the popup content.
+        buttons: [
+          { text: 'Cancelar' },
+          {
+            text: '<b>Salvar</b>',
+            type: 'button-positive',
+            onTap: function(e) {
+              if (!$scope.lista.market || !$scope.lista.data) {
+            //don't allow the user to close unless he enters with list´s data
+                  e.preventDefault();
+              } else {
+                  return $scope.lista;
+                }
+            }
+      }
+    ]
+  });
+
+  myPopup.then(function(res) {
+    console.log('Tapped!', res);
+  });
+
+  $timeout(function() {
+     myPopup.close(); //close the popup after 3 seconds for some reason
+  }, 150000);
+ };
+  
+}])
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });

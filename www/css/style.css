@@ -1,5 +1,49 @@
 /* Empty. Add your own CSS if you like */
 
+/* My own CSS */
+
+.bar-listup {
+    background: #4682B4; /*steel blue*/
+    color: #fff;
+    background-image: url('img/BackgroundAzul2x.png');
+}
+
+.sidemenu-profile {
+    background: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 80px;
+}
+
+.sidemenu-profile .profile-content {
+    background: transparent;
+}
+
+.sidemenu-profile-img {
+    width: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    
+}
+
+.sidemenu-profile-name {
+    font-size: 23px;
+    text-align: right;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sidemenu-profile-greetings {
+    text-align: right;
+    font-size: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    margin: 10px;
+    float: center;
+}
+
+/**/
 .centered {
     text-align: center;
 }

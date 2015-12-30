@@ -29,7 +29,7 @@ angular.module('listUp', ['ionic', 'starter.controllers'])
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
+    controller: 'listUp'
   })
 
   .state('app.search', {
@@ -41,20 +41,20 @@ angular.module('listUp', ['ionic', 'starter.controllers'])
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
+  .state('app.newlist', {
+      url: '/newlist',
       views: {
         'menuContent': {
-          templateUrl: 'templates/browse.html'
+          templateUrl: 'templates/newlist.html'
         }
       }
     })
-    .state('app.playlists', {
-      url: '/playlists',
+    .state('app.listup', {
+      url: '/listUp',
       views: {
         'menuContent': {
           templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
+          controller: 'listUpCtrl'
         }
       }
     })
@@ -69,5 +69,5 @@ angular.module('listUp', ['ionic', 'starter.controllers'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/listUp');
 });
