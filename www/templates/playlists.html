@@ -3,20 +3,38 @@
 	<button class="button button-icon ion-plus-round" style="color: #fff" ng-click="showPopup()"></button>
 </ion-nav-buttons>
   <ion-content>
-    <div class="card list-card">
-    	<div class="item item-avatar">
-    		<h2 align="center">Ultima Lista inserida     {{lista.data}}</h2>
-    		<h2 align="Right">{{}}</h2>
-    	</div>
-
+    <!-- <div class="card list-card">
     	<div class="item">
-    		<a style="margin-left: 5px">Local: {{lista.market}}</a>
+    		<h2 class="main-title" style="text-align: center">Ultima Lista inserida</h2>
+            <h2  class="main-title"style="margin-left: 20px; margin-bottom: 20px; margin-top: 20px">Data: {{lista.date}}</h2>
+    		<h2  class="main-title"style="margin-left: 20px; margin-bottom: 20px">Local: {{lista.market}}</h2>
+    		<h2 class="main-title" style="margin-left: 20px" >Total de itens : {{lista.qtde}}</h2>
     	</div>
+    </div> -->
 
-    	<div>
-    		<a style="margin-left: 20px" >Total de itens : {{lista.qtde}}</a>
-    	</div>
+    <main id="container">
+        <h2>Ultima lista de compras...</h2>
+            <div class="img-wrapper">
+                <img src="http://thumbs.dreamstime.com/t/background-shopping-symbols-26766124.jpg" alt="Just Background">
+            </div>
+                <p class="detail">Ultima lista de compras inserida , no dia {{lista.data}} , com o valor de R$: {{}}</p>
 
-    </div>
+        <div class="button-wrapper-custom">
+            <div class="layer"></div>
+            <button class="main-button fa fa-info">
+                <div class="ripple"></div>
+            </button>
+        </div>
+
+        <div class="layered-content">
+            <button class="close-button fa fa-times"></button>
+            <div class="content">
+                <img src="https://d13yacurqjgara.cloudfront.net/users/332135/avatars/normal/52d614ee44e3e21d2b73894c465773d7.png" alt="Balapa">
+                <p>Crafted by balapa.</p>
+                <p>See also my <a href="http://codepen.io/balapa/details/gbQbXR/">other pen</a></p>
+            </div>
+        </div>
+    </main>
+
   </ion-content>
 </ion-view>
